@@ -2,13 +2,13 @@
 
 ## Assignment 1: REST API Extension
 
-| | |
-|---|---|
-| **Semester** | Winter 2026 |
-| **Release Date** | January 28, 2026 (Week 3) |
-| **Due Date** | February 6, 2026 at 11:59 PM |
-| **Weight** | 10% of final grade |
-| **Submission** | Brightspace |
+|                  |                              |
+| ---------------- | ---------------------------- |
+| **Semester**     | Winter 2026                  |
+| **Release Date** | January 28, 2026 (Week 3)    |
+| **Due Date**     | February 6, 2026 at 11:59 PM |
+| **Weight**       | 10% of final grade           |
+| **Submission**   | Brightspace                  |
 
 ---
 
@@ -36,13 +36,13 @@ This simulates a real-world scenario where APIs manage multiple related resource
 
 Upon successful completion of this assignment, you will be able to:
 
-| # | Objective |
-|---|-----------|
-| 1 | Demonstrate understanding of RESTful API design principles |
-| 2 | Extend an existing Flask API with new functionality |
-| 3 | Implement proper HTTP methods, status codes, and error handling |
-| 4 | Test API endpoints using the REST Client extension |
-| 5 | Deploy a REST API to Azure App Service |
+| #   | Objective                                                       |
+| --- | --------------------------------------------------------------- |
+| 1   | Demonstrate understanding of RESTful API design principles      |
+| 2   | Extend an existing Flask API with new functionality             |
+| 3   | Implement proper HTTP methods, status codes, and error handling |
+| 4   | Test API endpoints using the REST Client extension              |
+| 5   | Deploy a REST API to Azure App Service                          |
 
 ---
 
@@ -54,13 +54,13 @@ This assignment consists of five parts.
 
 Extend the Flask API to include a new `tasks` resource with the following endpoints:
 
-| Endpoint | Method | Description | Success Code |
-|----------|--------|-------------|--------------|
-| `/tasks` | GET | Retrieve all tasks | 200 |
-| `/tasks/<id>` | GET | Retrieve a single task by ID | 200 |
-| `/tasks` | POST | Create a new task | 201 |
-| `/tasks/<id>` | PUT | Update an existing task | 200 |
-| `/tasks/<id>` | DELETE | Delete a task | 204 |
+| Endpoint      | Method | Description                  | Success Code |
+| ------------- | ------ | ---------------------------- | ------------ |
+| `/tasks`      | GET    | Retrieve all tasks           | 200          |
+| `/tasks/<id>` | GET    | Retrieve a single task by ID | 200          |
+| `/tasks`      | POST   | Create a new task            | 201          |
+| `/tasks/<id>` | PUT    | Update an existing task      | 200          |
+| `/tasks/<id>` | DELETE | Delete a task                | 204          |
 
 #### 3.1.1 Task Data Structure
 
@@ -78,24 +78,24 @@ Each task must contain the following fields:
 
 **Field Specifications:**
 
-| Field | Type | Required | Default | Description |
-|-------|------|----------|---------|-------------|
-| `id` | integer | Auto | — | Unique identifier (auto-generated) |
-| `title` | string | Yes | — | Task title |
-| `description` | string | No | `""` | Task description |
-| `user_id` | integer | Yes | — | Must reference an existing user |
-| `completed` | boolean | No | `false` | Task completion status |
+| Field         | Type    | Required | Default | Description                        |
+| ------------- | ------- | -------- | ------- | ---------------------------------- |
+| `id`          | integer | Auto     | —       | Unique identifier (auto-generated) |
+| `title`       | string  | Yes      | —       | Task title                         |
+| `description` | string  | No       | `""`    | Task description                   |
+| `user_id`     | integer | Yes      | —       | Must reference an existing user    |
+| `completed`   | boolean | No       | `false` | Task completion status             |
 
 #### 3.1.2 Validation Requirements
 
 Your API must handle the following error cases with appropriate HTTP status codes:
 
-| Scenario | Response Code |
-|----------|---------------|
-| Task not found | 404 Not Found |
+| Scenario                                      | Response Code   |
+| --------------------------------------------- | --------------- |
+| Task not found                                | 404 Not Found   |
 | Missing required field (`title` or `user_id`) | 400 Bad Request |
-| Invalid `user_id` (user doesn't exist) | 400 Bad Request |
-| Invalid JSON in request body | 400 Bad Request |
+| Invalid `user_id` (user doesn't exist)        | 400 Bad Request |
+| Invalid JSON in request body                  | 400 Bad Request |
 
 #### 3.1.3 Initial Data
 
@@ -114,9 +114,9 @@ tasks = [
 
 Add an endpoint to retrieve all tasks assigned to a specific user:
 
-| Endpoint | Method | Description | Success Code |
-|----------|--------|-------------|--------------|
-| `/users/<id>/tasks` | GET | Retrieve all tasks for a specific user | 200 |
+| Endpoint            | Method | Description                            | Success Code |
+| ------------------- | ------ | -------------------------------------- | ------------ |
+| `/users/<id>/tasks` | GET    | Retrieve all tasks for a specific user | 200          |
 
 **Behavior:**
 - Return `404 Not Found` if the user does not exist
@@ -130,17 +130,17 @@ Create a file named `test-tasks-api.http` that tests all your new endpoints.
 
 Your testing file must include the following nine test cases:
 
-| # | Test Case | Expected Result |
-|---|-----------|-----------------|
-| 1 | GET all tasks | 200 with tasks array |
-| 2 | GET a single task | 200 with task object |
-| 3 | GET a task that doesn't exist | 404 |
-| 4 | POST a new task (valid data) | 201 with created task |
-| 5 | POST a task with missing title | 400 |
-| 6 | POST a task with invalid user_id | 400 |
-| 7 | PUT to update a task | 200 with updated task |
-| 8 | DELETE a task | 204 |
-| 9 | GET tasks for a specific user | 200 with user's tasks |
+| #   | Test Case                        | Expected Result       |
+| --- | -------------------------------- | --------------------- |
+| 1   | GET all tasks                    | 200 with tasks array  |
+| 2   | GET a single task                | 200 with task object  |
+| 3   | GET a task that doesn't exist    | 404                   |
+| 4   | POST a new task (valid data)     | 201 with created task |
+| 5   | POST a task with missing title   | 400                   |
+| 6   | POST a task with invalid user_id | 400                   |
+| 7   | PUT to update a task             | 200 with updated task |
+| 8   | DELETE a task                    | 204                   |
+| 9   | GET tasks for a specific user    | 200 with user's tasks |
 
 Refer to `test-api.http` in the Week 2 lab repository for file format examples.
 
@@ -160,22 +160,22 @@ Create a short video demonstration showing your API running on Azure.
 
 #### 3.5.1 Video Requirements
 
-| Requirement | Details |
-|-------------|---------|
-| **Length** | Maximum 5 minutes |
-| **Audio** | Not required (silent is acceptable) |
-| **Upload** | YouTube (unlisted) |
+| Requirement | Details                                        |
+| ----------- | ---------------------------------------------- |
+| **Length**  | Maximum 5 minutes                              |
+| **Audio**   | Not required (silent is acceptable)            |
+| **Upload**  | YouTube (unlisted)                             |
 | **Content** | Screen recording showing your API being tested |
 
 #### 3.5.2 Video Content
 
 Your video must demonstrate the following:
 
-| Step | Description |
-|------|-------------|
-| 1 | Open your Azure URL in a browser to show the welcome message |
-| 2 | Run your `test-tasks-api.http` file against your Azure URL |
-| 3 | Show at least one error case (e.g., POST with invalid `user_id`) |
+| Step | Description                                                      |
+| ---- | ---------------------------------------------------------------- |
+| 1    | Open your Azure URL in a browser to show the welcome message     |
+| 2    | Run your `test-tasks-api.http` file against your Azure URL       |
+| 3    | Show at least one error case (e.g., POST with invalid `user_id`) |
 
 > **Tip:** Before recording, update your `test-tasks-api.http` to use your Azure URL:
 > ```http
@@ -222,14 +222,14 @@ Submit your **GitHub Repository URL** on Brightspace.
 
 ## 5. Marking Rubric
 
-| Part | Component | Weight |
-|------|-----------|:------:|
-| 1 | Tasks CRUD Endpoints | 25% |
-| 2 | User-Tasks Endpoint | 10% |
-| 3 | API Testing File | 10% |
-| 4 | Azure Deployment | 15% |
-| 5 | Video Demo | 40% |
-| | **Total** | **100%** |
+| Part | Component            |  Weight  |
+| ---- | -------------------- | :------: |
+| 1    | Tasks CRUD Endpoints |   25%    |
+| 2    | User-Tasks Endpoint  |   10%    |
+| 3    | API Testing File     |   10%    |
+| 4    | Azure Deployment     |   15%    |
+| 5    | Video Demo           |   40%    |
+|      | **Total**            | **100%** |
 
 ---
 
@@ -250,17 +250,6 @@ This assignment **permits** and **encourages** the use of generative AI tools as
 ```
 
 For complete details, refer to the **Course Policy on Generative AI Use** in the course outline.
-
----
-
-## 7. Late Submission Policy
-
-| Condition | Penalty |
-|-----------|---------|
-| Up to 5 days late | 10% per day |
-| More than 5 days late | Not accepted (grade of 0) |
-
-**Final acceptance deadline:** February 11, 2026 at 11:59 PM
 
 ---
 
