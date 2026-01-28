@@ -20,7 +20,6 @@
 4. [Submission Instructions](#4-submission-instructions)
 5. [Marking Rubric](#5-marking-rubric)
 6. [Academic Integrity](#6-academic-integrity)
-7. [Late Submission Policy](#7-late-submission-policy)
 
 ---
 
