@@ -40,14 +40,5 @@ I have implemented and tested the following 9 scenarios as required by the assig
 
 ---
 
-### **Quick Tips for Formatting**
 
-* **Headers:** Use `#` for the main title and `##` for sections.
-* **Bold text:** Wrap important words in double asterisks, like `**404 Error**`.
-* **Code blocks:** Use backticks (```) around URLs or file names to make them stand out.
-
-**Next Step:** Would you like me to help you double-check your `app.py` code one last time to ensure those 400 and 404 error handlers are working perfectly before you record?
-
-[Documenting a REST API in a README](https://www.youtube.com/watch?v=Swhq665jyZw)
-
-This video provides a walkthrough of a similar Flask deployment and shows how the documentation should look, which is a great reference for your final submission.
+This video provides a walkthrough of a similar Flask deployment and shows how the documentation should look, which is a great reference for your final submission
