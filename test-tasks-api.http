@@ -1,0 +1,50 @@
+@baseUrl = http://localhost:5000
+
+### 1. GET all tasks
+GET {{baseUrl}}/tasks
+
+### 2. GET a single task
+GET {{baseUrl}}/tasks/1
+
+### 3. GET a task that doesn't exist
+GET {{baseUrl}}/tasks/999
+
+### 4. POST a new task (valid)
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+    "title": "New Assignment Task",
+    "user_id": 1
+}
+
+### 5. POST a task with missing title (Error 400)
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+    "user_id": 1
+}
+
+### 6. POST a task with invalid user_id (Error 400)
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+    "title": "Ghost Task",
+    "user_id": 99
+}
+
+### 7. PUT to update a task
+PUT {{baseUrl}}/tasks/1
+Content-Type: application/json
+
+{
+    "completed": true
+}
+
+### 8. DELETE a task
+DELETE {{baseUrl}}/tasks/2
+
+### 9. GET tasks for a specific user
+GET {{baseUrl}}/users/1/tasks
