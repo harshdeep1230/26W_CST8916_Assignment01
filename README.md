@@ -38,7 +38,3 @@ I have implemented and tested the following 9 scenarios as required by the assig
 2. Run the application: `python app.py`
 3. Use `test-tasks-api.http` with the REST Client extension to execute tests.
 
----
-
-
-This video provides a walkthrough of a similar Flask deployment and shows how the documentation should look, which is a great reference for your final submission
