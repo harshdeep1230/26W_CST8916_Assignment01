@@ -5,13 +5,13 @@
 
 **Student ID:**  41170600
 
-**YouTube Demo Link:**  link
+**YouTube Demo Link:**  https://youtu.be/jagNS47J6GQ
 
 ---
 
 ## **Project Description**
 
-This project is a **Python Flask REST API** designed to manage a task list. It allows users to perform CRUD (Create, Read, Update, Delete) operations on tasks. The application is hosted on **Azure App Service** and tested using the **REST Client** extension in VS Code.
+A **Python Flask REST API** designed to manage a list. It allows users to perform CRUD (Create, Read, Update, Delete) operation. The application is hosted on **Azure App Service** and tested using the **REST Client** extension in VS Code.
 
 ## **Deployment Details**
 
@@ -20,7 +20,7 @@ This project is a **Python Flask REST API** designed to manage a task list. It a
 
 ## **API Endpoints Tested**
 
-I have implemented and tested the following 9 scenarios as required by the assignment:
+it has 9 scenarios as required by the assignment
 
 1. **GET /tasks** - Retrieve all tasks.
 2. **GET /tasks/1** - Retrieve a single existing task.
@@ -36,5 +36,5 @@ I have implemented and tested the following 9 scenarios as required by the assig
 
 1. Install dependencies: `pip install flask`
 2. Run the application: `python app.py`
-3. Use `test-tasks-api.http` with the REST Client extension to execute tests.
+3. Use `test-tasks-api.http` with the REST Client extension to execute tests
 
