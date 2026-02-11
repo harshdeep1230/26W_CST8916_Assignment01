@@ -16,7 +16,7 @@ This project is a **Python Flask REST API** designed to manage a task list. It a
 ## **Deployment Details**
 
 * **Local URL:** `http://127.0.0.1:5000`
-* **Azure Production URL:** `https://[your-app-name].azurewebsites.net`
+* **Azure Production URL:** ` https://cst8916-api-harshdeep.azurewebsites.net/
 
 ## **API Endpoints Tested**
 
